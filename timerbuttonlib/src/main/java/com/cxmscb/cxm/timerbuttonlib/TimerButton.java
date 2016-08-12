@@ -1,6 +1,7 @@
-
+package com.cxmscb.cxm.timerbuttonlib;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import android.widget.Button;
  */
 public class TimerButton extends Button {
 
-    private String beforeText ;
+
     private String afterText = "重发";
     private int ms = 10000;
 
@@ -20,21 +21,34 @@ public class TimerButton extends Button {
 
     public TimerButton(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.timerbutton);
+
+
+        afterText = typedArray.getString(R.styleable.timerbutton_afterText);
+
+        ms = typedArray.getInt(R.styleable.timerbutton_ms,10000);
+
+        typedArray.recycle();
+
+
+
     }
 
     public TimerButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public void init(String beforeText,String afterText,int ms){
+    public void init(String afterText,int ms){
 
-        this.beforeText = beforeText;
+
         this.afterText = afterText;
         this.ms = ms;
-        this.setText(beforeText);
+
     }
 
     public void startTimer(){
+
 
         new CountDownTimer(ms,1000){
 
@@ -46,6 +60,7 @@ public class TimerButton extends Button {
 
             @Override
             public void onFinish() {
+                TimerButton.this.setText("0 s");
                 TimerButton.this.setEnabled(true);
                 TimerButton.this.setText(afterText);
             }
