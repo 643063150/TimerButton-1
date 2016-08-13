@@ -4,7 +4,7 @@ publish {
     userOrg = 'cxmscb'
     groupId = 'com.cxmscb'
     artifactId = 'TimerButtonLib'
-    publishVersion = '0.0.3'
+    publishVersion = '0.0.5'
     desc = 'This is a demo TimerButton library .'
     website = 'https://github.com/cxmscb'
 

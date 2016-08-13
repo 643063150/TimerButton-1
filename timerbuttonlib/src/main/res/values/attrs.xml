@@ -2,7 +2,6 @@
 <resources>
 
     <declare-styleable name="timerbutton">
-        <attr name="beforeText" format="string" />
         <attr name="afterText" format="string" />
         <attr name="ms" format="integer" />
     </declare-styleable>

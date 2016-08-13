@@ -49,18 +49,17 @@ public class TimerButton extends Button {
 
     public void startTimer(){
 
+        TimerButton.this.setEnabled(false);
 
-        new CountDownTimer(ms,1000){
+        new CountDownTimer(ms+1000,1000){
 
             @Override
             public void onTick(long finish) {
-                TimerButton.this.setEnabled(false);
                 TimerButton.this.setText(finish/1000+" s");
             }
 
             @Override
             public void onFinish() {
-                TimerButton.this.setText("0 s");
                 TimerButton.this.setEnabled(true);
                 TimerButton.this.setText(afterText);
             }
