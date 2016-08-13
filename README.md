@@ -31,13 +31,16 @@
 ```
 ### XML 
 ```
+
     <com.cxmscb.cxm.timerbuttonlib.TimerButton
         android:id="@+id/libBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:gravity="center"
-        app:afterText="重 发"
+        android:text="获取验证码"
+        app:afterText="重发"
         app:ms="10000"
         />
+
 ```
