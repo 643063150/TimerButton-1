@@ -20,7 +20,13 @@ public class TimerButton extends Button {
     }
 
     public TimerButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
+
+        this(context, attrs,0);
+
+    }
+
+    public TimerButton(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.timerbutton);
 
@@ -30,13 +36,6 @@ public class TimerButton extends Button {
         ms = typedArray.getInt(R.styleable.timerbutton_ms,10000);
 
         typedArray.recycle();
-
-
-
-    }
-
-    public TimerButton(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
     }
 
     public void init(String afterText,int ms){
