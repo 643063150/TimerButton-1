@@ -4,7 +4,7 @@
 
 ### Use in Gradle
 
-> compile 'com.cxmscb:TimerButtonLib:0.0.5'
+> compile 'com.cxmscb:TimerButtonLib:0.0.6'
 
 
 ### 使用方式 / Java
